@@ -14,7 +14,7 @@ $clinicdte = array();
 
 $statement = "SELECT diary_id ,expert_id, clinic_id, clinic_date as date1, clinic_date2 as date2, FROM_UNIXTIME(created_on) FROM `clinic_date`";
 
-//echo $statement;
+// echo $statement;
 
 $results = $db->query($statement);
 
@@ -28,6 +28,7 @@ while($record = $results->fetchRow(DB_FETCHMODE_ASSOC)){
 
 }
 
+// encoded json 
 $jsonised = json_encode($clinicdte);
 
 

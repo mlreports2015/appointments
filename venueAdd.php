@@ -10,9 +10,11 @@ $dbquery = new DatabaseClass();
 
 if($_POST['venName']!=""){
 
+	// add venue address 
     $dbfields = array("clinic_name","clinic_address1", "clinic_address2", "clinic_city","clinic_pcode","exp_id", "created_on");
     $dbvalues = array($_POST['venName'],$_POST['venAddy'],$_POST['venAddy2'],$_POST['venAddCty'],$_POST['venAddpcde'],$_POST['exp_id'],time());
     $dbtable = "clinic";
+	// insert venue address
     $statement = $dbquery->insertquery($dbfields,$dbvalues,$dbtable);
 
     $dbresult = $db->query($statement) or die($db->errorno());
@@ -20,6 +22,7 @@ if($_POST['venName']!=""){
 
 }
 
+   // select available clinic  
   $dbtable = "clinic";
   $dbselect = $dbquery->selectALL($dbtable,array("exp_id"=>$_SESSION['org']));
   $dbresults = $db->query($dbselect);
@@ -32,7 +35,7 @@ if($_POST['venName']!=""){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Britannia Medicare Venues</title>
+<title>ML Appointment Venues</title>
 <link type="text/css" rel="stylesheet" rev="stylesheet" href="css/default.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -184,7 +187,7 @@ function removecid(cid){
     <tbody>
 <?php
 
-
+// list all venue details
 
 while($record = $dbresults->fetchRow(DB_FETCHMODE_ASSOC)){
 

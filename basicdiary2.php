@@ -21,7 +21,7 @@ $statement = "SELECT diary_id ,expert_id, clinic_id, FROM_UNIXTIME(clinic_date) 
 }
 
 
-echo $statement;
+//echo $statement;
 
 $results = $db->query($statement);
 
@@ -35,6 +35,8 @@ while($record = $results->fetchRow(DB_FETCHMODE_ASSOC)){
 
 
 }
+
+// jsonise information
 
 $jsonised = json_encode($clinicdte);
 
@@ -286,6 +288,7 @@ $jsonised = json_encode($clinicdte);
 <body>
 <?php 
 
+// list all the clinics in drop down
 $dbquery = new DatabaseClass;
 
 $dbtble = "clinic";

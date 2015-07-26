@@ -78,18 +78,6 @@ $(document).ready(function() {
 
 });
 
-function sendsms(id,phonez){
-
-	alert(id + " " + phonez);
-	
-     //$.get("http://britanniamedicare/booker/SMS.php?appid="+id+"&pno="+phonez , function(data, status){
-    $.get("./SMS.php?appid="+id+"&pno="+phonez , function(data, status){
-        alert("data:" + data + "Status: " + status);
-    
-      });
-
-	
-}
 
 function clinicChange(clinic){
 	

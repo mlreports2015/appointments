@@ -22,7 +22,7 @@ if(!session_id()){
 
 <?php 
 
-//include 'includes/dcon2.php';
+
 include 'includes/inc.php';
 /*
 if($_GET['explocid']){

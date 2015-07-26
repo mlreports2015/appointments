@@ -20,10 +20,10 @@ session_start();
 include '../includes/dcon.php';
 include '../includes/inc.php';
 
-include 'emailing.php';
+
 include 'databaseClass.php';
-include 'modxml2.php';
-///include 'mailClass.php';
+
+
 
 
 
@@ -59,7 +59,6 @@ $instructs['xpert']=$_POST['xprt'];
 $dbqueries = new DatabaseClass();
 
 
-//$csvString = file_get_contents("./csv/buyerEmpire.csv");
 
 // upload file instruction and send email
 
@@ -110,7 +109,7 @@ $target = $target."/".$caseid."/";
 if(is_uploaded_file($_FILES['file']['tmp_name'])){
 
   
- // echo $_FILES['file']['tmp_name'];
+
 
 
 if (!mkdir($target, 0777, true)) {
@@ -236,7 +235,7 @@ $exprtRes= mysql_fetch_array(mysql_query($exprt));
  //}
    
 
-//pLocation("../basicDiary.php?eid=".$instructs['eid']."&clinics=".$instructs['vennme']);
+
 
 
 

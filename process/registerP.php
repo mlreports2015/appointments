@@ -20,26 +20,7 @@ include "../includes/dcon.php";
 //include "../includes/Mail/Mail/mime.php";
 //include "../includes/Mail/Net/SMTP.php";
 include 'databaseClass.php';
-include 'emailing.php';
-
-/*
-$smtpinfo = array();
-$smtpinfo["host"] = "host266.hostmonster.com";
-$smtpinfo["port"] = "26";
-$smtpinfo["auth"] = true;
-$smtpinfo["username"] = "admin@mldoc.com";
-$smtpinfo["password"] = "BismiLlah786";
-*/
-
-
-
-$smtpinfo = array();
-$smtpinfo["host"] = "server.webnesters.co.uk";
-$smtpinfo["port"] = "465";
-$smtpinfo["auth"] = true;
-$smtpinfo["username"] = "mladmin@mldoctors.com";
-$smtpinfo["password"] = "BismiLlah786";
-
+//include 'emailing.php';
 
 if($_POST['orgcont']!="" && $_POST['orgtyp']!="") {
 
@@ -113,7 +94,7 @@ if($resID!=""){
 
 // header array
 
-	registrationemail('','',$smtpinfo);
+	//registrationemail('','',$smtpinfo);
 
 
 
